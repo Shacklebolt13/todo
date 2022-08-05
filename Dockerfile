@@ -9,7 +9,7 @@ WORKDIR /app/backend
 COPY todoBackend .
 RUN chmod +x ./mvnw
 COPY --from=frontend /app/frontend/dist/todo-app ./
-RUN apt update && install tree 
+RUN apt update && apt install tree -y
 RUN ls 
 RUN tree /app/
 
