@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Todo } from './todo/todo-item/Item';
 
-const BASE_URL = 'http://gagandeep.engineer/';
+const BASE_URL = 'http://gagandeep.engineer';
 
 @Injectable({
   providedIn: 'root'
