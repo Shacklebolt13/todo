@@ -12,5 +12,7 @@ services:
       - shared-volume:/app/backend
     depends_on:
       - frontend
+    ports:
+      - "80:8080"
 volumes:
   shared-volume:
