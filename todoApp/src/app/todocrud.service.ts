@@ -4,11 +4,12 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Todo } from './todo/todo-item/Item';
 
+const BASE_URL = 'http://localhost:8080';
+
 @Injectable({
   providedIn: 'root'
 })
 
-const BASE_URL = 'http://localhost:8080';
 
 export class TodocrudService {
 
