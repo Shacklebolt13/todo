@@ -1,0 +1,31 @@
+<div class="container" style="max-width: 1000px;">
+
+  <div class="container py-2 my-2" style="background: rgba(0,0,0,0.2);">
+    <div class="input-group my-3">
+      <input type="text" class="form-control" placeholder="Title" #in_title required minlength="4">
+    </div>
+
+    <div class="input-group my-3">
+      <textarea class="form-control" placeholder="Description" style="resize: none;" #in_desc></textarea>
+      <input type="checkbox" class="btn-check input-group-text" id="btn-check" autocomplete="off"
+        (click)="toggleFormDone()" #in_done>
+      <label class="btn {{(doneStatus)?'btn-success':'btn-danger'}} py-4"
+        for="btn-check">{{(doneStatus)?'Complete':'Incomplete'}}</label>
+    </div>
+
+    <div class="input-group my-3">
+      <button class="btn btn-secondary" style="width: 100%;" (click)="addTodo()">Add</button>
+    </div>
+
+  </div>
+  <div class="container" style="padding: 0 0 0 0;">
+    <span *ngIf="todos.length;else noTodoToShow">
+      <ul type="none" *ngFor="let item of todos" style="width: 100%;padding: 0 0 0 0;">
+        <app-todo-item [todo]="item" (destroyTodo)="destroyTodoHandlerParent($event)"></app-todo-item>
+      </ul>
+    </span>
+    <ng-template #noTodoToShow>
+      <p>No Todos to Show, Add Some ;)</p>
+    </ng-template>
+  </div>
+</div>
