@@ -3,6 +3,6 @@ services:
   todo:
     container_name: todo
     build: .
-    command: 'java /app/finalApp.jar'
+    command: 'java -jar /app/finalApp.jar'
     ports:
       - "80:8080"
