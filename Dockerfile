@@ -9,8 +9,10 @@ WORKDIR /app/backend
 COPY todoBackend .
 RUN chmod +x ./mvnw
 COPY --from=frontend /app/frontend/dist/todo-app ./src/main/resources/static/
-RUN apt update && apt install tree -y
-RUN ls 
-RUN tree /app/
-
-
+# RUN apt update && apt install tree -y
+# 
+# RUN tree /app/
+RUN ./mvnw clean package 
+RUN mv ./target/todo-app-0.0.1-SNAPSHOT.jar /app/finalApp.jar
+RUN rm /app/backend -rf
+RUN ls /app/
