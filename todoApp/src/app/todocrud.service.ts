@@ -40,7 +40,7 @@ export class TodocrudService {
   }
 
   deleteTodo(id: number): Observable<any> {
-    return this.http.delete('BASE_URL+/todo/' + id)
+    return this.http.delete(BASE_URL'+/todo/' + id)
       .pipe(
         retry(1), // retry a failed request up to 1 times
         catchError(this.handleError) // then handle the error
