@@ -1,0 +1,15 @@
+services:
+  nginx:
+    container_name: frontend
+    build: ./todoApp/
+    volumes:
+      - shared-volume:/app/frontend
+
+  web-app:
+    container_name: backend
+    build: ./todoBackend/
+    volumes:
+      - shared-volume:/app/backend
+
+volumes:
+  shared-volume:
